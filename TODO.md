@@ -32,12 +32,14 @@
 ### 核心连接方式：SSH（ssh2）
 
 **选择理由：**
+
 - 远程 Windows 已有 SSH Server（OpenSSH），无需额外安装
 - ssh2 是纯 Node.js 实现，跨平台，无需本地 SSH 依赖
 - 支持公钥/密码认证、SFTP 文件传输、端口转发
 - 可以执行任意 shell 命令，天然适配 Git CLI 操作
 
 **可选增强：Remote Agent 模式**
+
 - 在 Windows 上部署一个轻量 NestJS 服务
 - 通过 WebSocket 实时推送仓库状态变更（比轮询 SSH 更高效）
 - 支持 chokidar 文件监听，即时反映工作区变化
@@ -267,20 +269,20 @@
 
 ## 技术栈清单
 
-| 层级 | 技术 | 说明 |
-|------|------|------|
-| 前端框架 | React 18 + TypeScript | Vite 构建 |
-| UI 组件 | Ant Design 5 | 表格/树/表单等企业级组件 |
-| 状态管理 | Zustand | 轻量，适合中小项目 |
-| 数据请求 | React Query + axios | 缓存与自动刷新 |
-| 实时通信 | Socket.IO | 命令输出流式推送 |
-| Diff 渲染 | react-diff-viewer-continued | 支持 unified/split |
-| 语法高亮 | Prism.js / highlight.js | diff 代码高亮 |
-| 后端框架 | NestJS | 模块化架构 |
-| SSH 客户端 | ssh2 | 纯 JS 实现，无需本地 SSH |
-| 数据存储 | SQLite (better-sqlite3) | 轻量，本地配置/凭据存储 |
-| 加密 | Node.js crypto | AES-256-GCM 凭据加密 |
-| 进程管理 | PM2（可选） | Agent 模式守护进程 |
+| 层级       | 技术                        | 说明                     |
+| ---------- | --------------------------- | ------------------------ |
+| 前端框架   | React 18 + TypeScript       | Vite 构建                |
+| UI 组件    | Ant Design 5                | 表格/树/表单等企业级组件 |
+| 状态管理   | Zustand                     | 轻量，适合中小项目       |
+| 数据请求   | React Query + axios         | 缓存与自动刷新           |
+| 实时通信   | Socket.IO                   | 命令输出流式推送         |
+| Diff 渲染  | react-diff-viewer-continued | 支持 unified/split       |
+| 语法高亮   | Prism.js / highlight.js     | diff 代码高亮            |
+| 后端框架   | NestJS                      | 模块化架构               |
+| SSH 客户端 | ssh2                        | 纯 JS 实现，无需本地 SSH |
+| 数据存储   | SQLite (better-sqlite3)     | 轻量，本地配置/凭据存储  |
+| 加密       | Node.js crypto              | AES-256-GCM 凭据加密     |
+| 进程管理   | PM2（可选）                 | Agent 模式守护进程       |
 
 ## 关键依赖
 
@@ -330,7 +332,34 @@ Phase 5 (Agent 模式) ← 可选，按需开发
 ## MVP 目标（Phase 0-3.4）
 
 首个可用版本应实现：
+
 1. 添加 SSH 连接到远程 Windows
 2. 扫描并选择 Git 仓库
 3. 查看 status / stage / commit / push / pull
 4. 查看基本 diff
+
+## 背景
+
+去年年底（25 年）打麻将认识一个女生，大家平时习惯叫她学姐，比我大5岁，穿衣风格是我喜欢的类型（JK、洛丽塔、御姐这几种风格），我是有好感的
+
+## 暧昧阶段
+
+### 事件一
+
+今年（26 年）过完年回去工作，一个平常到再也不能平常的周五，学姐突然问我：宝，打麻将嘛
+
+我内心那个震惊：我去，她叫我宝？她喜欢我！
+
+于是我赴约，并拿出最高礼仪：沐浴，并且换上我骚骚的衣服
+
+我有早到的习惯，我到的时候学姐也差不多了，穿的好漂亮啊，那叫一个心动，进房间对视了一下
+
+那天打牌特别不顺，学姐赢的最多，最后一把我还助攻她拿下了大牌，我就试探的说了一句：这你不请我吃顿好的？
+
+没想到她脱口而出：好啊
+
+然后就稀里糊涂的约上饭了！
+
+我脑抽的说了一句，要不要喝点？我酒量特别差，当时不知道为什么突然说出这句话，可能没话说了。。。
+
+###
