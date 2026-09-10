@@ -4,6 +4,7 @@ const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('node:fs'
 const path = require('node:path');
 const os = require('node:os');
 const { createWorkspacePreferences, isTrustedWorkspaceSender } = require('./workspace-preferences.cjs');
+const { createExternalLinkHandler } = require('./external-links.cjs');
 
 const smokeTest = process.argv.includes('--smoke-test');
 app.setName('RemoteGit');
@@ -44,7 +45,9 @@ function createWindow() {
       webSecurity: true,
     },
   });
-  window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
+  window.webContents.setWindowOpenHandler(createExternalLinkHandler(
+    smokeTest ? require('./smoke.cjs').openExternal : (url) => shell.openExternal(url),
+  ));
   const guardNavigation = (event, url) => {
     if (new URL(url).origin !== origin) event.preventDefault();
   };
@@ -147,7 +150,7 @@ async function start() {
     app.once('before-quit', () => clearTimeout(timer));
   }
   if (smokeTest) {
-    await require('./smoke.cjs')({ window, origin, token, updates, closeBackend, version: app.getVersion() });
+    await require('./smoke.cjs')({ window, origin, token, updates, closeBackend, backend, version: app.getVersion() });
     app.quit();
   }
 }
