@@ -32,7 +32,7 @@ git log --format="%H %s" -- https://example.com/a/very/long/path/that/must/stay/
 
 | 平台 | 安装方式 | 说明 |
 | :--- | :---: | ---: |
-| macOS | 打开安装包 | 保留现有交互 |
+| macOS | 重启安装 | 保留现有交互 |
 | Windows / Linux | 重启安装 | 保留现有交互 |
 
 ### 宽表格

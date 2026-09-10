@@ -38,7 +38,13 @@
     "width": 427,
     "scrollWidth": 427
   },
-  "updateActions": ["check", "download", "cancel", "openFile", "revealFile", "install"],
+  "restart": {
+    "platform": "darwin",
+    "installMode": "restart",
+    "notesRendered": true,
+    "buttons": ["检查更新", "重启安装"]
+  },
+  "updateActions": ["check", "download", "cancel", "install"],
   "contentCases": [
     {
       "name": "empty",

@@ -16,7 +16,7 @@ function setup(notes) {
     currentVersion: '0.2.0',
     latestVersion: null,
     platform: 'darwin',
-    installMode: 'manual',
+    installMode: 'restart',
     supported: true,
     releaseNotes: '',
     background: false,
